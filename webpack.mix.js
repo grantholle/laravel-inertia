@@ -1,4 +1,8 @@
-const mix = require('laravel-mix');
+const mix = require('laravel-mix')
+const webpackConfig = require('./webpack.config')
+const host = process.env.APP_URL
+  ? process.env.APP_URL.split('//')[1]
+  : 'localhost'
 
 /*
  |--------------------------------------------------------------------------
@@ -12,9 +16,21 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+  .vue({ version: 3 })
+  .disableSuccessNotifications()
+  .version()
+  .webpackConfig(webpackConfig)
   .postCss('resources/css/app.css', 'public/css', [
     require('postcss-import'),
     require('tailwindcss'),
     require('postcss-nested'),
-    require('autoprefixer'),
-  ]);
+  ])
+  .babelConfig({
+    plugins: ['@babel/plugin-syntax-dynamic-import'],
+  })
+  .options({
+    hmrOptions: {
+      host: host,
+      port: '8080'
+    }
+  })
