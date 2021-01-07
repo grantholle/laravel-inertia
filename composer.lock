@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "830ebd9728c2578f7ea343f112a4febf",
+    "content-hash": "5582014e31f2df5c5ff9a27295549895",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -919,6 +919,50 @@
                 }
             ],
             "time": "2020-04-13T13:17:36+00:00"
+        },
+        {
+            "name": "grantholle/api-resource-detection",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/grantholle/api-resource-detection.git",
+                "reference": "0c772039f572e0a61dcf605625358fa478b703d5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/grantholle/api-resource-detection/zipball/0c772039f572e0a61dcf605625358fa478b703d5",
+                "reference": "0c772039f572e0a61dcf605625358fa478b703d5",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^6.0|^7.0|^8.0",
+                "illuminate/http": "^6.0|^7.0|^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GrantHolle\\Http\\Resources\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Grant Holle",
+                    "email": "hollegrant@gmail.com"
+                }
+            ],
+            "description": "Detect API Resources for your Eloquent models.",
+            "support": {
+                "issues": "https://github.com/grantholle/api-resource-detection/issues",
+                "source": "https://github.com/grantholle/api-resource-detection/tree/1.0.0"
+            },
+            "time": "2020-12-15T06:13:55+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -5418,6 +5462,70 @@
                 "source": "https://github.com/hamcrest/hamcrest-php/tree/v2.0.1"
             },
             "time": "2020-07-09T08:09:16+00:00"
+        },
+        {
+            "name": "laravel/telescope",
+            "version": "v4.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/telescope.git",
+                "reference": "535889a7585c331854dbdf8ca5e66209588408dd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/535889a7585c331854dbdf8ca5e66209588408dd",
+                "reference": "535889a7585c331854dbdf8ca5e66209588408dd",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "laravel/framework": "^8.2",
+                "php": "^7.3|^8.0",
+                "symfony/var-dumper": "^5.0"
+            },
+            "require-dev": {
+                "ext-gd": "*",
+                "orchestra/testbench": "^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Telescope\\TelescopeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Telescope\\": "src/",
+                    "Laravel\\Telescope\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                },
+                {
+                    "name": "Mohamed Said",
+                    "email": "mohamed@laravel.com"
+                }
+            ],
+            "description": "An elegant debug assistant for the Laravel framework.",
+            "keywords": [
+                "debugging",
+                "laravel",
+                "monitoring"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel/telescope/issues",
+                "source": "https://github.com/laravel/telescope/tree/v4.4.0"
+            },
+            "time": "2020-12-15T19:19:38+00:00"
         },
         {
             "name": "mockery/mockery",
