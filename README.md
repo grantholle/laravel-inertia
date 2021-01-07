@@ -11,6 +11,17 @@
 
 This is a starting point for new projects using [Inertia](https://inertiajs.com/) with Vue 3 and Tailwindcss. It uses Laravel Mix v6 to compile the assets. It does not include anything for authentication, but would suggest using [Laravel Fortify](https://laravel.com/docs/fortify) to provide all of the routes and login logic for authentication. This template is meant to give you a head start in starting a new project from scratch.
 
+Also included is [grantholle/api-resource-detection](https://github.com/grantholle/api-resource-detection) that helps with returning API resources to your Vue components, which I find very ergonomic and one of the best features of Inertia.
+
+Here's the full list of what's included in this starter:
+
+- Laravel Mix v6
+- Inertiajs
+- Tailwindcss
+- Requires `facade/ignition`
+- `grantholle/api-resource-detection`
+- Laravel Telescope (local environment only)
+
 ## Usage
 
 First, start your project by using [degit](https://github.com/Rich-Harris/degit).
