@@ -7,6 +7,29 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+# Laravel Inertia Starter
+
+This is a starting point for new projects using [Inertia](https://inertiajs.com/) with Vue 3 and Tailwindcss. It uses Laravel Mix v6 to compile the assets. It does not include anything for authentication, but would suggest using [Laravel Fortify](https://laravel.com/docs/fortify) to provide all of the routes and login logic for authentication. This template is meant to give you a head start in starting a new project from scratch.
+
+## Usage
+
+First, start your project by using [degit](https://github.com/Rich-Harris/degit).
+
+```
+npx degit grantholle/laravel-inertia#main [your project name]
+```
+
+Then perform your usual "getting started" tasks for Laravel:
+
+- `composer install`
+- `cp .env.example .env`
+- `php artisan key:generate`
+- Set up your database
+- `npm i`
+- `npm run dev`
+
+At this point, you should be set to do your project with Inertia and Tailwind already installed. Depending on your project requirements, you'll likely want to start with authentication.
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
