@@ -18,6 +18,15 @@
         <app-button @click.prevent="notify('This is neutral!')" color="neutral">Neutral</app-button>
       </div>
     </div>
+
+    <h2 class="text-xl font-bold mb-2 mt-10">Alerts</h2>
+
+    <div class="space-y-4">
+      <Alert>My neutral alert.</Alert>
+      <Alert level="success">My success alert.</Alert>
+      <Alert level="warning">My warning alert.</Alert>
+      <Alert level="error">My error alert.</Alert>
+    </div>
     <notifications />
   </div>
 </template>
@@ -25,10 +34,12 @@
 <script>
 import { defineComponent } from 'vue'
 import Notifications from '@/components/Notifications'
+import Alert from '@/components/Alert'
 
 export default defineComponent({
   components: {
-    Notifications
+    Alert,
+    Notifications,
   },
 
   methods: {
