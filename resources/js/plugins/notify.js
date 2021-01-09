@@ -3,6 +3,8 @@ import store from '@/stores/notifications'
 export default {
   install (app, config = { delay: 4000 }) {
     const notify = (notification, delay) => {
+      notification.delay = delay
+
       store.addNotification(notification, delay || config.delay)
     }
 
