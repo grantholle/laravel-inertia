@@ -9,7 +9,6 @@ export default {
 
   addNotification (notification, delay = 4000) {
     const id = `id_${nanoid()}`
-    console.log(`adding ${id}`)
 
     this.state.notifications.splice(0, 0, {
       ...notification,
