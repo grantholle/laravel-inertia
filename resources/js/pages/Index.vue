@@ -27,6 +27,25 @@
       <Alert level="warning">My warning alert.</Alert>
       <Alert level="error">My error alert.</Alert>
     </div>
+
+    <h2 class="text-xl font-bold mb-2 mt-10">Modal</h2>
+
+    <app-button @click.prevent="showModal = true">Launch Modal</app-button>
+
+    <modal
+      v-if="showModal"
+      @close="showModal = false"
+      @action="modalAction"
+      :auto-close="false"
+      size="sm"
+      action-text="Deactivate!"
+      headline="Deactivate Account"
+    >
+      <p class="text-sm text-gray-500">
+        Are you sure you want to deactivate your account? All of your data will be permanently removed from our servers forever. This action cannot be undone.
+      </p>
+    </modal>
+
     <notifications />
   </div>
 </template>
@@ -35,11 +54,19 @@
 import { defineComponent } from 'vue'
 import Notifications from '@/components/Notifications'
 import Alert from '@/components/Alert'
+import Modal from '@/components/Modal'
 
 export default defineComponent({
   components: {
+    Modal,
     Alert,
     Notifications,
+  },
+
+  data () {
+    return {
+      showModal: false
+    }
   },
 
   methods: {
@@ -49,6 +76,10 @@ export default defineComponent({
         level,
       })
     },
+
+    modalAction (callback) {
+      callback()
+    }
   }
 })
 </script>
