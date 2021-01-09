@@ -38,11 +38,11 @@
       @action="modalAction"
       :auto-close="false"
       size="sm"
-      action-text="Deactivate!"
-      headline="Deactivate Account"
+      action-text="Got it!"
+      headline="Optional Headline"
     >
       <p class="text-sm text-gray-500">
-        Are you sure you want to deactivate your account? All of your data will be permanently removed from our servers forever. This action cannot be undone.
+        This is some default text in the modal, but you could put anything in here like forms or something else.
       </p>
     </modal>
 
