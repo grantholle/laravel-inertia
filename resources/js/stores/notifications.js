@@ -3,7 +3,8 @@ import { nanoid } from 'nanoid'
 
 export default {
   state: reactive({
-    notifications: []
+    notifications: [],
+    timeouts: {}
   }),
 
 
@@ -15,10 +16,11 @@ export default {
       id,
     })
 
-    setTimeout(() => this.removeNotification(id), delay)
+    this.state.timeouts[id] = setTimeout(() => this.removeNotification(id), delay)
   },
 
   removeNotification (id) {
+    clearTimeout(this.state.timeouts[id])
     const index = this.state.notifications.findIndex(n => n.id === id)
 
     this.state.notifications.splice(index, 1)

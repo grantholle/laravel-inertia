@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed right-0 top-0 z-50 max-w-sm w-full h-screen px-4 pb-4 scroll-y-scroll">
+  <div class="fixed right-0 top-0 z-50 max-w-sm w-full px-4 space-y-4 max-h-screen scroll-y-scroll">
     <transition-group
       enter-active-class="transform ease-out duration-300 transition"
       enter-from-class="translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2"
