@@ -1,5 +1,7 @@
 import Input from '@/components/forms/Input'
+import Button from '@/components/Button'
 
 export default {
-  Input,
+  'app-input': Input,
+  'app-button': Button,
 }
