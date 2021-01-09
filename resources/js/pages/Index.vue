@@ -3,11 +3,20 @@
     <h1 class="font-bold text-2xl leading-5 mb-8">Laravel Inertia Starter</h1>
     <p class="text-lg mb-4">A Laravel starter with Inertia and some components to get you started.</p>
 
-    <div class="mb-2">
-      <app-button @click="addSuccess" color="green">Success</app-button>
-    </div>
-    <div>
-      <app-button @click.prevent="addError" color="red">Error</app-button>
+    <h2 class="text-xl font-bold mb-2">Notifications</h2>
+    <div class="space-y-2">
+      <div>
+        <app-button @click="notify('This is a success!', 'success')" color="green">Success</app-button>
+      </div>
+      <div>
+        <app-button @click.prevent="notify('This is an error!', 'error')" color="red">Error</app-button>
+      </div>
+      <div>
+        <app-button @click.prevent="notify('This is a warning!', 'warning')" color="yellow">Warning</app-button>
+      </div>
+      <div>
+        <app-button @click.prevent="notify('This is neutral!')" color="neutral">Neutral</app-button>
+      </div>
     </div>
     <notifications />
   </div>
@@ -23,13 +32,12 @@ export default defineComponent({
   },
 
   methods: {
-    addSuccess () {
-      this.$success('This is a success!')
+    notify (text, level) {
+      this.$notify({
+        text,
+        level,
+      })
     },
-
-    addError () {
-      this.$error('This is an error!')
-    }
   }
 })
 </script>
