@@ -43,6 +43,9 @@
           </template>
         </confirm-button>
       </div>
+      <div>
+        <app-button @click.prevent="showDoubleModal = true" color="white">Modal + Confirm Modal</app-button>
+      </div>
     </div>
 
 
@@ -58,6 +61,29 @@
       <p class="text-sm text-gray-500">
         This is some default text in the modal, but you could put anything in here like forms or something else.
       </p>
+    </modal>
+
+    <modal
+      v-if="showDoubleModal"
+      @close="showDoubleModal = false"
+      @action="modalAction"
+      :auto-close="false"
+      size="sm"
+      action-text="Got it!"
+      ref="doubleModal"
+    >
+      <p class="text-sm text-gray-500">
+        This modal launches a confirmation modal.
+      </p>
+
+      <template v-slot:actions>
+        <confirm-button @confirm="nestedConfirm" type="button" class="sm:ml-1">
+          Launch Confirm Modal
+        </confirm-button>
+        <app-button @click.prevent="() => $refs.doubleModal.close()" type="button" color="white">
+          Cancel
+        </app-button>
+      </template>
     </modal>
 
     <notifications />
@@ -81,7 +107,8 @@ export default defineComponent({
 
   data () {
     return {
-      showModal: false
+      showModal: false,
+      showDoubleModal: false,
     }
   },
 
@@ -103,7 +130,15 @@ export default defineComponent({
       console.log('Action confirmed.')
 
       closeModal()
-    }
+    },
+
+    nestedConfirm (closeModal) {
+      console.log('Nested action confirmed.')
+
+      closeModal()
+      this.$refs.doubleModal.close()
+      this.$success('Double modal complete!')
+    },
   }
 })
 </script>
