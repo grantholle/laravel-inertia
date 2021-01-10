@@ -20,11 +20,11 @@
 
         <transition
           enter-active-class="ease-out duration-300"
-          enter-from-class="opacity-0 translate-y-4 sm:-translate-y-4"
+          enter-from-class="opacity-0 -translate-y-5"
           enter-to-class="opacity-100 translate-y-0"
           leave-active-class="ease-in duration-200"
           leave-from-class="opacity-100 translate-y-0"
-          leave-to-class="opacity-0 translate-y-4 sm:-translate-y-4"
+          leave-to-class="opacity-0 -translate-y-5"
           @after-leave="$emit('close')"
         >
           <div v-if="show" ref="modal" :class="modalSize" class="inline-block align-middle bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
