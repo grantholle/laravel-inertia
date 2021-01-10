@@ -1,7 +1,7 @@
 <template>
   <component
     :is="component"
-    class="border border-transparent font-medium rounded-md shadow-md hover:shadow text-white focus:outline-none transition ease-in-out duration-150 items-center justify-center"
+    class="border border-transparent font-medium rounded-md shadow hover:shadow-none text-white focus:outline-none transition ease-in-out duration-150 items-center justify-center"
     :class="[
       buttonSize,
       buttonColor,

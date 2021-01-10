@@ -1,7 +1,7 @@
 <template>
   <teleport to="body">
     <div class="fixed z-10 inset-0 overflow-y-auto">
-      <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+      <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center">
         <transition
           enter-active-class="duration-300 ease-out"
           enter-from-class="opacity-0"
@@ -16,7 +16,7 @@
         </transition>
 
         <!-- This element is to trick the browser into centering the modal contents. -->
-        <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+<!--        <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>-->
 
         <transition
           enter-active-class="ease-out duration-300"
@@ -27,7 +27,7 @@
           leave-to-class="opacity-0 translate-y-4 sm:-translate-y-4"
           @after-leave="$emit('close')"
         >
-          <div v-if="show" ref="modal" :class="modalSize" class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+          <div v-if="show" ref="modal" :class="modalSize" class="inline-block align-middle bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
             <div class="hidden sm:block absolute top-0 right-0 pt-4 pr-4">
               <button @click.prevent="close" type="button" class="bg-white rounded-full text-gray-400 hover:text-gray-500 focus:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition ease-in-out">
                 <span class="sr-only">Close</span>
@@ -37,7 +37,7 @@
               </button>
             </div>
             <div class="sm:flex sm:items-start px-4 pt-5 pb-4 sm:p-6">
-              <div class="mt-3 text-center sm:mt-0 sm:text-left">
+              <div class="mt-3 text-center sm:mt-0 sm:text-left w-full">
                 <h3 v-if="headline" class="text-lg mb-2 leading-6 font-medium text-gray-900" id="modal-headline">
                   {{ headline }}
                 </h3>
@@ -156,6 +156,7 @@ export default defineComponent({
 
     listener (e) {
       if (e.key === 'Escape') {
+        e.stopPropagation()
         this.close()
       }
     },

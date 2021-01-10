@@ -30,7 +30,21 @@
 
     <h2 class="text-xl font-bold mb-2 mt-10">Modal</h2>
 
-    <app-button @click.prevent="showModal = true">Launch Modal</app-button>
+    <div class="space-y-2">
+      <div>
+        <app-button @click.prevent="showModal = true">Launch Modal</app-button>
+      </div>
+      <div>
+        <confirm-button @confirm="confirmed" color="red">
+          Delete?
+
+          <template v-slot:actionText>
+            I'm not scared
+          </template>
+        </confirm-button>
+      </div>
+    </div>
+
 
     <modal
       v-if="showModal"
@@ -55,9 +69,11 @@ import { defineComponent } from 'vue'
 import Notifications from '@/components/Notifications'
 import Alert from '@/components/Alert'
 import Modal from '@/components/Modal'
+import ConfirmButton from '@/components/ConfirmButton'
 
 export default defineComponent({
   components: {
+    ConfirmButton,
     Modal,
     Alert,
     Notifications,
@@ -77,8 +93,16 @@ export default defineComponent({
       })
     },
 
-    modalAction (callback) {
-      callback()
+    modalAction (closeModal) {
+      console.log('Modal action.')
+
+      closeModal()
+    },
+
+    confirmed (closeModal) {
+      console.log('Action confirmed.')
+
+      closeModal()
     }
   }
 })
