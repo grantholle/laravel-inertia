@@ -7,24 +7,29 @@ export default {
 
       store.addNotification(notification, delay || config.delay)
     }
-
-    // Generic call
-    app.config.globalProperties.$notify = notify
-
-    // Success notification
-    app.config.globalProperties.$success = (text, delay) => {
+    const success = (text, delay) => {
       notify({
         level: 'success',
         text
       }, delay)
     }
-
-    // Error notification
-    app.config.globalProperties.$error = (text, delay) => {
+    const error = (text, delay) => {
       notify({
         level: 'error',
         text
       }, delay)
     }
+
+    // Generic call
+    app.config.globalProperties.$notify = notify
+    app.provide('$notify', notify)
+
+    // Success notification
+    app.config.globalProperties.$success = success
+    app.provide('$success', success)
+
+    // Error notification
+    app.config.globalProperties.$error = error
+    app.provide('$error', error)
   }
 }
