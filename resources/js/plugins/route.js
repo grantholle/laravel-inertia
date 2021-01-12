@@ -1,6 +1,6 @@
 export default {
   install (app) {
-    app.config.globalProperties.$route = (name, params) => {
+    const route = (name = '', params) => {
       if (name.startsWith('http')) {
         return name
       }
@@ -12,5 +12,8 @@ export default {
         return '#'
       }
     }
+
+    app.config.globalProperties.$route = route
+    app.provide('$route', route)
   }
 }
